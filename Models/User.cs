@@ -7,13 +7,13 @@ namespace MyJwtAuthApp.Models
         public int Id { get; set; }
 
         [Required]
-        public string Name { get; set; } // Updated from Username to Name
+        public required string Name { get; set; } // Updated from Username to Name
 
         [Required]
         [EmailAddress]
-        public string Email { get; set; } // Added Email field
+        public required string Email { get; set; } // Added Email field
 
         [Required]
-        public string PasswordHash { get; set; }
+        public required string PasswordHash { get; set; }
     }
 }

@@ -62,7 +62,10 @@ namespace MyJwtAuthApp.Controllers
         new Claim(ClaimTypes.Email, user.Email)
     };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var key = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(_config["Jwt:Key"]
+                    ?? throw new ArgumentNullException("Jwt:Key is not set in configuration"))
+            );
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(

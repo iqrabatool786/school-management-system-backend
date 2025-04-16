@@ -7,16 +7,16 @@ namespace MyJwtAuthApp.Models
         public int Id { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public required string Name { get; set; }
 
         [Required]
-        public string Class { get; set; }
+        public required string Class { get; set; }
 
         [Required]
-        public int RollNo { get; set; }
+        public int RollNo { get; set; }  
 
         [Required]
         [EmailAddress]
-        public string Email { get; set; }
+        public required string Email { get; set; }  
     }
 }
